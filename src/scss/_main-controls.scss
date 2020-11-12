@@ -1,0 +1,46 @@
+.main-controls {
+  display: flex;
+  width: 100%;
+  padding: 8px 16px;
+  color: #666;
+  position: sticky;
+  top: 0;
+  background-color: #222;
+  z-index: 99;
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3);
+  font-size: 28px;
+  font-weight: normal;
+  align-items: center;
+
+  input,
+  button {
+    text-align: center;
+    background-color: #222;
+    color: #666;
+    font-size: 28px;
+  }
+
+  .left,
+  .body,
+  .right {
+    flex: 1;
+  }
+
+  .body {
+    text-align: center;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .play-pause {
+    background-color: #c0392b;
+    color: #fff;
+    padding: 8px;
+    height: 64px;
+    cursor: pointer;
+    width: 128px;
+    font-size: 28px;
+  }
+}

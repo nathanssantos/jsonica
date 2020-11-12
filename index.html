@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./src/css/styles.css">
+	<title>jSonica</title>
+</head>
+
+<body>
+	<div class="app">
+		<div id="audio-analysis"></div>
+		<div class="main-controls">
+			<div class="left">
+				<button class="play-pause">
+					PLAY
+				</button>
+			</div>
+			<div class="body">
+				<div class="bpm">
+					<div class="label">BPM</div>
+					<input type="number" value="85" min="0" max="200">
+				</div>
+			</div>
+			<div class="right">
+
+				<div class="current-step">
+					<div class="label">STEP</div>
+					<div class="number">0</div>
+				</div>
+			</div>
+		</div>
+		<div class="channels-board">
+			<div class="scroll">
+				<div class="scroll-track">
+					<div class="channel am">
+						<div class="synthesizer-name">AMSynth</div>
+						<div class="channel-body">
+							<div class="controls">
+								<button class="bt-toggle">
+									<div class="text">
+										OFF
+									</div>
+								</button>
+								<label class="channel-option-label">
+									GAIN
+									<input class="channel-option gain" value="1" type="number" step="0.05" title="Gain" />
+								</label>
+								<label class="channel-option-label">
+									TUNE
+									<input class="channel-option tune" value="1" type="number"  title="Tune" />
+								</label>								
+							</div>
+							<div class="keys">
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="48"  />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="channel fm">
+						<div class="synthesizer-name">FMSynth</div>
+						<div class="channel-body">
+							<div class="controls">
+								<button class="bt-toggle">
+									<div class="text">
+										OFF
+									</div>
+								</button>
+								<label class="channel-option-label">
+									GAIN
+									<input class="channel-option gain" value="1" type="number" step="0.05" title="Gain" />
+								</label>
+								<label class="channel-option-label">
+									TUNE
+									<input class="channel-option tune" value="1" type="number"  title="Tune" />
+								</label>								
+							</div>
+							<div class="keys">
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="EB" />
+									<input class="duration" placeholder="DUR" type="number" value="32"  />
+								</div>
+										<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="FB" />
+									<input class="duration" placeholder="DUR" type="number" value="32"  />
+								</div>
+										<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="AB" />
+									<input class="duration" placeholder="DUR" type="number" value="32"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="FB" />
+									<input class="duration" placeholder="DUR" type="number" value="32"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE"  value="EB"/>
+									<input class="duration" placeholder="DUR" type="number" value="32"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="FB" />
+									<input class="duration" placeholder="DUR" type="number" value="32"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE"  />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="EB"/>
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="FB" />
+									<input class="duration" placeholder="DUR" type="number" value="32"  />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="channel synth">
+						<div class="synthesizer-name">Synth</div>
+						<div class="channel-body">
+							<div class="controls">
+								<button class="bt-toggle">
+									<div class="text">
+										OFF
+									</div>
+								</button>
+								<label class="channel-option-label">
+									GAIN
+									<input class="channel-option gain" value="1" type="number" step="0.05" title="Gain" />
+								</label>
+								<label class="channel-option-label">
+									TUNE
+									<input class="channel-option tune" value="1" type="number"  title="Tune" />
+								</label>								
+							</div>
+							<div class="keys">
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="DB" />
+									<input class="duration" placeholder="DUR" type="number" value="4"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="FB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>							
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="EB" />
+									<input class="duration" placeholder="DUR" type="number" value="4"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>							
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="4"  />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="channel metal">
+						<div class="synthesizer-name">MetalSynth</div>
+						<div class="channel-body">
+							<div class="controls">
+								<button class="bt-toggle">
+									<div class="text">
+										OFF
+									</div>
+								</button>
+								<label class="channel-option-label">
+									GAIN
+									<input class="channel-option gain" value="1" type="number" step="0.05" title="Gain" />
+								</label>
+								<label class="channel-option-label">
+									TUNE
+									<input class="channel-option tune" value="1" type="number"  title="Tune" />
+								</label>								
+							</div>
+							<div class="keys">
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="128"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="128"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="64"  />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="channel membrane">
+						<div class="synthesizer-name">MembraneSynth</div>
+						<div class="channel-body">
+							<div class="controls">
+								<button class="bt-toggle">
+									<div class="text">
+										OFF
+									</div>
+								</button>
+								<label class="channel-option-label">
+									GAIN
+									<input class="channel-option gain" value="1" type="number" step="0.05" title="Gain" />
+								</label>
+								<label class="channel-option-label">
+									TUNE
+									<input class="channel-option tune" value="1" type="number"  title="Tune" />
+								</label>								
+							</div>
+							<div class="keys">
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="4"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="4"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle on">
+										<div class="index"></div>
+										<div class="text">ON</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+								<div class="key">
+									<button class="bt-toggle">
+										<div class="index"></div>
+										<div class="text">OFF</div>
+									</button>
+									<input class="note" placeholder="NOTE" value="CB" />
+									<input class="duration" placeholder="DUR" type="number" value="8"  />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="step-marker"></div>
+		</div>
+	</div>
+
+
+	<script src="./vendor/tone/index.js"></script>
+	<script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

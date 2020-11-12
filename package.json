@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start": "browser-sync start -f . --server",
+    "sass": "node-sass -w ./src/scss/styles.scss -o ./src/css"
+  }
+}
