@@ -74,8 +74,9 @@ const channels = [
 ];
 
 const setup = () => {
-  for (const channel of channels)
+  for (const channel of channels) {
     channel.synthesizer.connect(new Tone.Gain(channel.gain).toDestination());
+  }
   Tone.Transport.scheduleRepeat(repeat, "16n");
   Tone.Transport.bpm.value = 85;
 };
