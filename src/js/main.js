@@ -143,7 +143,7 @@ const toggleStartStop = () => {
 
 const toggleButton = (button) => {
   const buttonTitle = button.querySelector(".text");
-  if (!button.className.includes("on") && !button.className.includes("on")) {
+  if (!button.className.includes("on")) {
     button.classList.add("on");
     buttonTitle.textContent = "ON";
   } else {
